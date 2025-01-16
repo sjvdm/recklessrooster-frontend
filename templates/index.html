@@ -5,14 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        /* Styling for collapsible */
+        .collapsible {
+            background-color: #222; /* Match dark theme */
+            color: #fff; /* White text */
+            cursor: pointer;
+            padding: 10px 20px;
+            width: 100%;
+            border: none;
+            text-align: center; /* Center text */
+            outline: none;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            border-radius: 5px; /* Rounded edges */
+        }
+
+        .collapsible:hover {
+            background-color: #333; /* Slightly lighter on hover */
+        }
+
+        .content {
+            padding: 10px 20px;
+            display: block; /* Expanded by default */
+            overflow: hidden;
+            background-color: #111; /* Slightly lighter than background */
+            color: #ddd; /* Dimmer white */
+            border-radius: 5px; /* Rounded edges to match button */
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="site-name">Reckless Roosters</h1>
-        <p class="tagline">Find Crime-Prone Animals. Once.</p>
-        <div class="image-container">
-            <img src="/static/images/main.png" alt="Crime-Prone Animals">
+        <h1 class="site-name text-center">Reckless Roosters</h1>
+        <p class="tagline text-center">Find Crime-Prone Animals. Once.</p>
+        <div class="image-container text-center">
+            <img src="/static/images/main.png" alt="Crime-Prone Animals" class="img-fluid">
+        </div>
+
+        <!-- Collapsible Section -->
+        <button class="collapsible">What exactly is Reckless Roosters?</button>
+        <div class="content">
+            <p>Yes it is.</p>
         </div>
     </div>
+
+    <script>
+        // JavaScript to handle collapsible functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const coll = document.querySelector('.collapsible');
+            const content = document.querySelector('.content');
+
+            // Set initial state to expanded
+            content.style.display = 'block';
+
+            coll.addEventListener('click', function () {
+                const isExpanded = content.style.display === 'block';
+                content.style.display = isExpanded ? 'none' : 'block';
+                this.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
