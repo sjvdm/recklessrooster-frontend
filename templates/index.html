@@ -6,7 +6,7 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/static/css/styles.css">
     <style>
-        /* Styling for collapsible */
+        /* Styling for collapsibles */
         .collapsible {
             background-color: #222; /* Match dark theme */
             color: #fff; /* White text */
@@ -27,7 +27,7 @@
 
         .content {
             padding: 10px 20px;
-            display: block; /* Expanded by default */
+            display: none; /* Closed by default */
             overflow: hidden;
             background-color: #111; /* Slightly lighter than background */
             color: #ddd; /* Dimmer white */
@@ -44,26 +44,45 @@
             <img src="/static/images/main.png" alt="Crime-Prone Animals" class="img-fluid">
         </div>
 
-        <!-- Collapsible Section -->
+        <!-- First Collapsible Section -->
         <button class="collapsible">What exactly is Reckless Roosters?</button>
-        <div class="content">
-            <p>Yes it is.</p>
+        <div class="content" id="first-content">
+            <p>Our goal is to prove that animals are also crime prone - especially jaywalking.</p>
         </div>
+
+        <!-- Second Collapsible Section -->
+        <button class="collapsible">No, really?</button>
+        <div class="content">
+            <p>Yes, really.</p>
+        </div>
+
+        <!-- Second Collapsible Section -->
+        <button class="collapsible">No, come on, really?</button>
+        <div class="content">
+            <p>Ok, ok! RecklessRoosters is a test project that shows how data can be used, even if they seem unrelated, to build stories. RecklessRoosters is a <a href="https://www.etashi.com">Etashi</a> brainchild. </p>
+            <p>Our planned go live date is toward the end of January 2025</p>
+        </div>
+
     </div>
 
     <script>
         // JavaScript to handle collapsible functionality
         document.addEventListener('DOMContentLoaded', function () {
-            const coll = document.querySelector('.collapsible');
-            const content = document.querySelector('.content');
+            const coll = document.querySelectorAll('.collapsible');
+            const contents = document.querySelectorAll('.content');
 
-            // Set initial state to expanded
-            content.style.display = 'block';
+            // Ensure only the first collapsible is expanded by default
+            contents.forEach((content, index) => {
+                content.style.display = index === 0 ? 'block' : 'none';
+            });
 
-            coll.addEventListener('click', function () {
-                const isExpanded = content.style.display === 'block';
-                content.style.display = isExpanded ? 'none' : 'block';
-                this.classList.toggle('active');
+            // Add click event to each collapsible
+            coll.forEach((button, index) => {
+                button.addEventListener('click', function () {
+                    const isExpanded = contents[index].style.display === 'block';
+                    contents[index].style.display = isExpanded ? 'none' : 'block';
+                    this.classList.toggle('active');
+                });
             });
         });
     </script>
