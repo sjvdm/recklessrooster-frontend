@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/static/css/styles.css">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Reckless Roosters">
+    <meta property="og:description" content="Find Crime-Prone Animals. Once.">
+    <meta property="og:image" content="https://recklessroosters.com/static/images/main.png">
+    <meta property="og:url" content="https://recklessroosters.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reckless Roosters">
+    <meta name="twitter:description" content="Find Crime-Prone Animals. Once.">
+    <meta name="twitter:image" content="https://recklessroosters.com/static/images/main.png">
+
     <style>
         /* Styling for collapsibles */
         .collapsible {
@@ -44,8 +59,13 @@
             <img src="/static/images/main.png" alt="Crime-Prone Animals" class="img-fluid">
         </div>
 
+        <!-- Embed Looker report -->
+        <div class="iframe-wrapper">
+        <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/bc3fba77-7345-49b2-9ce6-6651aeab41c7/page/DzedE" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-  activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        </div>
+
         <!-- First Collapsible Section -->
-        <button class="collapsible">What exactly is Reckless Roosters?</button>
+        <button class="collapsible">What exactly is RecklessRoosters?</button>
         <div class="content" id="first-content">
             <p>Our goal is to prove that animals are also crime prone - especially jaywalking.</p>
         </div>
@@ -61,6 +81,21 @@
         <div class="content">
             <p>Ok, ok! RecklessRoosters is a test project that shows how data can be used, even if they seem unrelated, to build stories. RecklessRoosters is a <a href="https://www.etashi.com">Etashi</a> brainchild. </p>
             <p>Our planned go live date is toward the end of January 2025</p>
+        </div>
+
+        
+        <!-- 3rd Collapsible Section -->
+        <button class="collapsible">What other plans to you have?</button>
+        <div class="content">
+            <p>Post the most common animal to jaywalk to X automatically, daily.</p>
+            <p>Stories about the daily animal!</p>
+        </div>
+
+
+        <!-- 4th Collapsible Section -->
+        <button class="collapsible">What other plans to you have?</button>
+        <div class="content">
+            <p>Glad you asked! There is an API available to query the data (fastapi-based). Go to XXX for the docs.</p>
         </div>
 
     </div>

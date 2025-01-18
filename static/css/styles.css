@@ -4,23 +4,27 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh; /* Allow content to expand */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh; /* Full-screen height */
 }
 
 .container {
-    text-align: center; /* Center align content */
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px; /* Add padding for spacing */
+    max-width: 800px; /* Optional: Limit container width */
 }
 
 .site-name {
-    font-size: 3rem; /* Large font for the site name */
+    font-size: 3rem;
     margin: 0;
 }
 
 .tagline {
-    font-size: 1.5rem; /* Slightly smaller tagline */
+    font-size: 1.5rem;
     margin: 10px 0 20px;
 }
 
@@ -32,4 +36,16 @@ body {
     max-width: 50%; /* Scale image to fit */
     border: 2px solid #fff; /* Add white border around the image */
     border-radius: 10px; /* Rounded corners for the image */
+}
+
+.iframe-wrapper {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 40px auto; /* Increase vertical margin */
+}
+
+iframe {
+    display: block; /* Remove any inline element space issues */
+    margin: 0 auto;
 }
