@@ -2,6 +2,7 @@ import os
 from fastapi import FastAPI, Request, Query
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from fastapi.responses import PlainTextResponse
 from pydantic import BaseModel
 from google.cloud import bigquery
 import sqlparse
@@ -40,6 +41,9 @@ templates = Jinja2Templates(directory="templates")
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "title": "Reckless Roosters"})
 
+@app.get("/robots.txt", response_class=PlainTextResponse)
+async def robots_txt():
+    return "User-agent: *\nAllow: /"
 
 class QueryResult(BaseModel):
     rows: list
