@@ -1,80 +1,111 @@
+/* General Styles */
 body {
-    background-color: #000; /* Dark theme: black background */
-    color: #fff; /* White text */
+    background-color: #000;
+    color: #fff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Allow content to expand */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-    text-align: center;
-    margin: 20px auto;
-    padding: 20px; /* Add padding for spacing */
-    max-width: 800px; /* Optional: Limit container width */
+    max-width: 1200px;
+    padding: 20px;
+    width: 90%;
 }
 
 .site-name {
-    font-size: 3rem;
-    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 10px 0;
 }
 
 .tagline {
-    font-size: 1.5rem;
-    margin: 10px 0 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+/* Logo Styles */
 .image-container {
-    margin-top: 20px;
+    text-align: center;
+    margin: 20px 0;
 }
 
-.image-container img {
-    max-width: 50%; /* Scale image to fit */
-    border: 2px solid #fff; /* Add white border around the image */
-    border-radius: 10px; /* Rounded corners for the image */
+.logo-img {
+    max-width: 150px;
+    height: auto;
+    border: 2px solid #fff;
+    border-radius: 10px;
 }
 
+/* Map (Iframe) Styles */
 .iframe-wrapper {
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-    margin: 40px auto; /* Increase vertical margin */
+    margin: 20px 0;
+    width: 100%;
 }
 
 iframe {
-    display: block; /* Remove any inline element space issues */
-    margin: 0 auto;
+    width: 100%;
+    height: 450px;
+    border: none;
 }
 
-/* Styling for collapsibles */
+/* Collapsible Sections */
 .collapsible {
-    background-color: #222; /* Match dark theme */
-    color: #fff; /* White text */
-    cursor: pointer;
-    padding: 10px 20px;
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
     width: 100%;
+    text-align: center;
     border: none;
-    text-align: center; /* Center text */
-    outline: none;
-    font-size: 1.2rem;
-    margin-top: 20px;
-    border-radius: 5px; /* Rounded edges */
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .collapsible:hover {
-    background-color: #333; /* Slightly lighter on hover */
+    background-color: #333;
 }
 
 .content {
-    padding: 10px 20px;
-    display: none; /* Closed by default */
-    overflow: hidden;
-    background-color: #111; /* Slightly lighter than background */
-    color: #ddd; /* Dimmer white */
-    border-radius: 5px; /* Rounded edges to match button */
-    margin-top: 5px;
+    display: none;
+    background-color: #111;
+    color: #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contentleft {
+    display: none;
+    background-color: #111;
+    color: #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .site-name {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .logo-img {
+        max-width: 100px;
+    }
+
+    iframe {
+        height: 300px;
+    }
 }

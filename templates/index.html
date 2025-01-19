@@ -19,21 +19,26 @@
     <meta name="twitter:title" content="Reckless Roosters">
     <meta name="twitter:description" content="Find Crime-Prone Animals. Once.">
     <meta name="twitter:image" content="https://recklessroosters.com/static/images/main.png">
-
-    
 </head>
 <body>
     <div class="container">
         <h1 class="site-name text-center">Reckless Roosters</h1>
         <p class="tagline text-center">Find Crime-Prone Animals. Once.</p>
-        <div class="image-container text-center">
-            <img src="/static/images/main.png" alt="Crime-Prone Animals" class="img-fluid">
+
+        <!-- Logo -->
+        <div class="image-container">
+            <img src="/static/images/main.png" alt="Crime-Prone Animals Logo" class="logo-img">
         </div>
 
-        <!-- Embed Looker report -->
+        <!-- Map -->
         <div class="iframe-wrapper">
-        <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/bc3fba77-7345-49b2-9ce6-6651aeab41c7/page/DzedE" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-  activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+            <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/bc3fba77-7345-49b2-9ce6-6651aeab41c7/page/DzedE" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-  activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
         </div>
+
+        <!-- 
+        <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/bc3fba77-7345-49b2-9ce6-6651aeab41c7/page/DzedE" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-  activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
++       <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/bc3fba77-7345-49b2-9ce6-6651aeab41c7/page/DzedE" frameborder="0" allowfullscreen sandbox="allow-scripts allow-same-origin"></iframe>
+        -->
 
         <!-- First Collapsible Section -->
         <button class="collapsible">What exactly is RecklessRoosters?</button>
@@ -50,29 +55,34 @@
         <!-- Second Collapsible Section -->
         <button class="collapsible">No, come on, really?</button>
         <div class="content">
-            <p>Ok, ok! RecklessRoosters is a test project that shows how data can be used, even if they seem unrelated, to build stories. RecklessRoosters is a <a href="https://www.etashi.com">Etashi</a> brainchild. </p>
-            <p>Our planned go live date is toward the end of January 2025</p>
+            <p>Ok, ok! RecklessRoosters is a test project that shows how data can be used, even if they seem unrelated, to build stories.</p>
+            <p>In short, RecklessRoosters uses data from the <a href="https://www.gbif.org/occurrence/search">GBIF database</a> for daily animal spottings. We enrich this data, with the distance from a public road using the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">OSM overpass API</a>. By this process, we can pinpoint any animals that may be jaywalking. </p>
+            <p>See the documentation <a href="https://sudden-math-748.notion.site/Reckless-Roosters-17f93308ca188005aebaffd2fafc0758?pvs=4">here</a></p>
+            <p>RecklessRoosters is a <a href="https://www.etashi.com">Etashi</a> project. </p>
+
         </div>
 
          <!-- Second Collapsible Section -->
-         <button class="collapsible">How do you determine which animals are prone to crime?</button>
-         <div class="content">
-             <p>Important question. See the docs <a href="https://sudden-math-748.notion.site/Reckless-Roosters-17f93308ca188005aebaffd2fafc0758?pvs=4">here</a></p>
-         </div>
-        
+        <button class="collapsible">How do you determine which animals are prone to crime (jaywalking)?</button>
+        <div class="content">
+            <p>In short, RecklessRoosters uses data from the <a href="https://www.gbif.org/occurrence/search">GBIF database</a> for daily animal spottings. We enrich this data, with the distance from a public road using the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">OSM overpass API</a>. By this process, we can pinpoint any animals that may be jaywalking. </p>
+            <p>See the documentation <a href="https://sudden-math-748.notion.site/Reckless-Roosters-17f93308ca188005aebaffd2fafc0758?pvs=4">here</a></p>
+        </div>
+
         <!-- 3rd Collapsible Section -->
         <button class="collapsible">What other plans to you have?</button>
-        <div class="content">
+        <div class="contentleft">
             <p>Post the most common animal to jaywalk to X automatically, daily.</p>
             <p>Stories about the daily animal!</p>
+            <p>Easier mapping to common names (such as Peter the Pony, or Floris the Fly), but also more people friendly names - like a "fly" instead of "Homocapalus Propanasus Oilus"</p>
+            <p>For more plans, see the documentation <a href="https://sudden-math-748.notion.site/Reckless-Roosters-17f93308ca188005aebaffd2fafc0758?pvs=4">here</a></p>
         </div>
 
-
-        <!-- 4th Collapsible Section -->
-        <button class="collapsible">What other plans to you have?</button>
+        <button class="collapsible">Is there an API available to query the raw data?</button>
         <div class="content">
-            <p>Glad you asked! There is an API available to query the data (fastapi-based). Go to XXX for the docs.</p>
+            <p>Yes! It is still very much under development, but beta, fastapi-based API documentation can be vieweed <a href="https://recklessroosters.com/docs">here</a> (swagger) or <a href="https://recklessroosters.com/redoc">here</a> (redoc)</p>
         </div>
+
 
     </div>
 
@@ -80,7 +90,7 @@
         // JavaScript to handle collapsible functionality
         document.addEventListener('DOMContentLoaded', function () {
             const coll = document.querySelectorAll('.collapsible');
-            const contents = document.querySelectorAll('.content');
+            const contents = document.querySelectorAll('.content,.contentleft');
 
             // Ensure only the first collapsible is expanded by default
             contents.forEach((content, index) => {
