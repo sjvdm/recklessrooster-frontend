@@ -26,8 +26,9 @@ uvicorn app:app --reload
 Access the webpage at: 
 http://127.0.0.1:8000
 
-Auto generated docs at: 
-http://127.0.0.1:8000/docs
+Auto generated API docs at: 
+https://127.0.0.1:8000/docs
+https://localhost:8000/redoc
 
 
 
