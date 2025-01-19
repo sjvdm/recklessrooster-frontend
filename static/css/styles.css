@@ -49,3 +49,32 @@ iframe {
     display: block; /* Remove any inline element space issues */
     margin: 0 auto;
 }
+
+/* Styling for collapsibles */
+.collapsible {
+    background-color: #222; /* Match dark theme */
+    color: #fff; /* White text */
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    text-align: center; /* Center text */
+    outline: none;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    border-radius: 5px; /* Rounded edges */
+}
+
+.collapsible:hover {
+    background-color: #333; /* Slightly lighter on hover */
+}
+
+.content {
+    padding: 10px 20px;
+    display: none; /* Closed by default */
+    overflow: hidden;
+    background-color: #111; /* Slightly lighter than background */
+    color: #ddd; /* Dimmer white */
+    border-radius: 5px; /* Rounded edges to match button */
+    margin-top: 5px;
+}
