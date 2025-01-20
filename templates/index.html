@@ -64,6 +64,7 @@
             <p>In short, RecklessRoosters uses data from the <a href="https://www.gbif.org/occurrence/search">GBIF database</a> for daily animal spottings. We enrich this data, with the distance from a public road using the <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">OSM overpass API</a>. By this process, we can pinpoint any animals that may be jaywalking. </p>
             <p>See the documentation <a href="https://sudden-math-748.notion.site/Reckless-Roosters-17f93308ca188005aebaffd2fafc0758?pvs=4">here</a></p>
             <p>RecklessRoosters is a <a href="https://www.etashi.com">Etashi</a> project. </p>
+            <p>See API (fastapi) docs <a href="https://recklessroosters.com/docs">here</a></p>
 
         </div>
 
@@ -97,9 +98,9 @@
             const coll = document.querySelectorAll('.collapsible');
             const contents = document.querySelectorAll('.content,.contentleft');
 
-            // Ensure only the first collapsible is expanded by default
+            // Ensure only the first three is expanded by default
             contents.forEach((content, index) => {
-                content.style.display = index === 0 ? 'block' : 'none';
+                content.style.display = [0, 1, 2].includes(index) ? 'block' : 'none';
             });
 
             // Add click event to each collapsible
