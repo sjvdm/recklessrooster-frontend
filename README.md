@@ -1,6 +1,4 @@
-Recklessrooster.
-
-Who is more prone to crime?
+Backend services for recklessrooster.com - finding crime-prone animals - once!
 
 An ASGI-fastapi based website. Probably overkill, but wanted to stresstest fastapi.
 
@@ -12,6 +10,7 @@ Todo still:
 - Logging
 - Integration testing
 
+**This readme is limited as this is still a work in progress. The code should be self-explanatory at this stage, and I plan to add proper documentation in due time**
 
 ## Local dev
 
@@ -29,7 +28,6 @@ http://127.0.0.1:8000
 Auto generated API docs at: 
 https://127.0.0.1:8000/docs
 https://localhost:8000/redoc
-
 
 
 ## Stress testing
